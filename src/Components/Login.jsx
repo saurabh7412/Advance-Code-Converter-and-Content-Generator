@@ -37,6 +37,7 @@ const Login = () => {
     <div style={{}}>
       <a
         href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=https://advance-code-converter-and-content-generator.vercel.app`}
+        // href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=http://localhost:3000/`}
         style={{
           textDecoration: "none",
           color: "grey",
