@@ -19,25 +19,25 @@ const Login = () => {
             `https://advance-code-converter-backend.onrender.com/getToken?code=${currCode}`
           )
           .then((res) => {
-            console.log("Access Token", res.data.access_token);
+            // console.log("Access Token", res.data.access_token);
             localStorage.setItem("token", res.data.access_token);
           })
           .catch((err) => {
-            console.log(err.message());
+            // console.log(err.message());
           });
       }
 
       setTimeout(() => {
         navigate(`/code-convertor`);
-      }, 10000);
+      }, 1000);
     }
   });
 
   return (
     <div style={{}}>
       <a
-        href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=https://advance-code-converter-and-content-generator.vercel.app/code-converter`}
-        // href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=http://localhost:3000/`}
+        // href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=https://advance-code-converter-and-content-generator.vercel.app/code-converter`}
+        href={`${process.env.REACT_APP_OAUTH_BASE_URL}?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=repo&redirect_uri=http://localhost:3000/`}
         style={{
           textDecoration: "none",
           color: "grey",

@@ -22,7 +22,7 @@ export const CodeEditor = ({
   convertedText = "",
 }) => {
 
-  console.log({type, editorText, defaultLang,convertedText});
+  // console.log({type, editorText, defaultLang,convertedText});
   let currVal = '';
 
   if(type != "source"){

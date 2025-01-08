@@ -13,9 +13,9 @@ export const AllRoutes = () => {
         <Route
           path="/code-convertor"
           element={
-            <ProtectedWrapper>
+            // <ProtectedWrapper>
               <CodeConvertor />
-            </ProtectedWrapper>
+            // </ProtectedWrapper>
           }
         />
         <Route path="/content-generator" element={<ContentGenerator />} />

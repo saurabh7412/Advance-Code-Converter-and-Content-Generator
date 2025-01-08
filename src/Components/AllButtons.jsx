@@ -18,6 +18,8 @@ const AllButtons = ({
 }) => {
   const [accessToken] = useState(localStorage.getItem("token"));
 
+  const withOutGithub = localStorage.getItem("withoutgithub");
+
   const handleLoader = () => {
     return (
       <>
@@ -38,7 +40,7 @@ const AllButtons = ({
       </button>
       <button onClick={handleDebug}>{isDebugLoading ? handleLoader() : "Debug"}</button>
       <button onClick={handleCheckQuality}>{isCheckQualityLoading ? handleLoader() : "Check Quality"}</button>
-      <button onClick={handleOpenModal}>Push Code to Github</button>
+      { withOutGithub && <button onClick={handleOpenModal}>Push Code to Github</button>}
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}

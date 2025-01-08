@@ -16,7 +16,7 @@ export const ContentGenerator = () => {
   const [error, setError] = useState(null);
   const [generatedContent, setGeneratedContent] = useState("");
 
-  console.log({ userInput, selectedWordLimit });
+  // console.log({ userInput, selectedWordLimit });
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -55,7 +55,7 @@ export const ContentGenerator = () => {
 
       setGeneratedContent(text);
     } catch (error) {
-      console.error("Error generating content:", error);
+      // console.error("Error generating content:", error);
       setError("An error occurred. Please try again.");
       toast('An error occurred. Please try again.')
     } finally {
@@ -70,7 +70,7 @@ export const ContentGenerator = () => {
     setError(null);
   };
 
-  console.log({error});
+  // console.log({error});
 
   return (
     <div className="gemini-container">

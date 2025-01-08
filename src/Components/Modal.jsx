@@ -73,7 +73,7 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log({ name, value });
+    // console.log({ name, value });
     if (name === "branch") {
       setFormData({ ...formData, brandName: value });
     } else {
@@ -87,7 +87,7 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
 
     // Find the selected repository in the `repos` array
     const selectedRepoObject = repos.find((repo) => repo.name === selectedRepo);
-    console.log({ selectedRepo, selectedRepoObject });
+    // console.log({ selectedRepo, selectedRepoObject });
 
     // Fetch the branches for the selected repository
     axios
@@ -100,11 +100,11 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
         }
       )
       .then((response) => {
-        console.log({ response: response.data });
+        // console.log({ response: response.data });
         setBranches(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching branches:", error);
+        // console.error("Error fetching branches:", error);
       });
   };
 
@@ -112,11 +112,11 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting");
+    // console.log("Submitting");
     formData.accessToken = localStorage.getItem("token");
     formData.repo = repoSelected;
     formData.fileContent = code;
-    console.log("Form Data", formData);
+    // console.log("Form Data", formData);
     setIsLoading(true);
     try {
       // Perform a POST request using Axios
@@ -129,7 +129,7 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
 
       // console.log("Data sent:", response.data);
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
       openErrorAlert("File pushing failed. Please try again.");
       setIsLoading(false);
     }
@@ -165,7 +165,7 @@ const Modal = ({ open, onClose, accessToken, repos, code }) => {
     );
   };
 
-  console.log({ successMessage, errorMessage });
+  // console.log({ successMessage, errorMessage });
 
   return (
     <div className={`modal ${open ? "active" : ""}`}>

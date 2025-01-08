@@ -8,7 +8,7 @@ const ProtectedWrapper = ({children}) => {
 
     if(!withOutGithub){
         const accessToken = localStorage.getItem('token')
-        console.log("access token: " , accessToken);
+        // console.log("access token: " , accessToken);
         if(!accessToken){
             return <>
                 <h1 style={{
