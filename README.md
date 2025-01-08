@@ -13,7 +13,7 @@ The Advance Code Converter and Content Generator is a powerful tool designed to 
 
 ## Features
 
-- **Code Conversion**: Convert code snippets between multiple programming languages.
+- **Code Conversion**: Convert code snippets between multiple programming languages. You can **debug** and do **quality checking** of the code.
 - **Content Generation**: Generate various types of content based on user input and preferences.
 - **User-Friendly Interface**: Intuitive design for easy navigation and usage.
 - **Real-Time Preview**: See the converted code or generated content in real-time.
