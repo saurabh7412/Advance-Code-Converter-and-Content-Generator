@@ -40,7 +40,7 @@ const AllButtons = ({
       </button>
       <button onClick={handleDebug}>{isDebugLoading ? handleLoader() : "Debug"}</button>
       <button onClick={handleCheckQuality}>{isCheckQualityLoading ? handleLoader() : "Check Quality"}</button>
-      { withOutGithub && <button onClick={handleOpenModal}>Push Code to Github</button>}
+      { !withOutGithub && <button onClick={handleOpenModal}>Push Code to Github</button>}
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}

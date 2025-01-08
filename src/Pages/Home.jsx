@@ -11,7 +11,8 @@ export const Home = () => {
 
   useEffect(() => {
     function getReq() {
-      axios.get(`https://advance-code-converter-backend.onrender.com`)
+      axios
+        .get(`https://advance-code-converter-backend.onrender.com`)
         .then((res) => {
           if (res.data.data === "Backend Github AI") {
             setFlag(true);
@@ -28,22 +29,46 @@ export const Home = () => {
   }, []);
 
   const handleWithOutGithub = () => {
-    localStorage.setItem('withoutgithub', true);
+    localStorage.setItem("withoutgithub", true);
 
-    navigate('/code-convertor')
-  }
+    navigate("/code-convertor");
+  };
 
   return (
     <div className="welcome-container">
-      <h1 className="glowing-text" style={{marginTop:'0px'}}>Welcome to Advance Code Converter with Content Generator</h1>
-      <div>{spinner && <Loader/>}</div>
-      <div>
+      <h1 className="glowing-text" style={{ marginTop: "0px" }}>
+        Welcome to Advance Code Converter with Content Generator
+      </h1>
+      <div>{spinner && <Loader />}</div>
+      {/* <div>
         {flag ? (<>
           <Login />
           <button className="login-button" onClick={handleWithOutGithub}>Continue withOut Github OAuth</button>
         </>
         ) : (
           <p className="glowing-text" style={{fontSize:"22px"}}>
+            Backend is deployed on render so it may take some time to start the
+            server. Patience is appreciated.
+          </p>
+        )}
+      </div> */}
+      <div>
+        {flag ? (
+          <>
+            <p className="glowing-text" style={{ fontSize: "22px" }}>
+              The Advance Code Converter and Content Generator is a powerful
+              tool designed to streamline the process of code conversion and
+              content generation. This React-based application offers a
+              user-friendly interface for developers and content creators to
+              efficiently transform code between different programming languages
+              and generate various types of content.
+            </p>
+            <button className="login-button" onClick={handleWithOutGithub}>
+              Try it out !
+            </button>
+          </>
+        ) : (
+          <p className="glowing-text" style={{ fontSize: "22px" }}>
             Backend is deployed on render so it may take some time to start the
             server. Patience is appreciated.
           </p>
@@ -55,7 +80,9 @@ export const Home = () => {
           paddingTop: "20px",
         }}
       >
-        <p className="glowing-text" style={{fontSize:"22px"}}>Created By @Saurabh</p>
+        <p className="glowing-text" style={{ fontSize: "22px" }}>
+          Created By @Saurabh
+        </p>
       </div>
     </div>
   );
